@@ -1,0 +1,39 @@
+.wmovie{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+  color: #000;
+    padding: .5rem;
+   transition: all 200ms ease-in-out;
+    margin-bottom: .7rem;
+    border-radius: .4rem;
+    font-weight: 500;
+    background-color: #fff;
+}
+.title{
+    padding: 0;
+    width: 10rem;
+}
+.wimage{
+    height: 100px;
+    width: 100px;
+
+}
+.wmovie:hover{
+    background-color: #04293A;
+    color: #fff;
+
+}
+
+@media screen and (max-width: 850px){
+    .wmovie{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
+    }
+    .wimage{
+        width: 120px;
+    }
+}

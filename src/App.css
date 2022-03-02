@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+background-color: #141E27;
+ 
+ height: 100%;
+ width: 100vw;
+ font-family: 'Open Sans', sans-serif !important;
+}
+
+@media screen and (max-width: 800px) {
+  .app{width: auto;}
+}
+

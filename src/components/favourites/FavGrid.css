@@ -1,0 +1,12 @@
+.favGrid{
+    margin: 2rem auto;
+    width: 40rem;
+    height: vmax;
+}
+
+@media screen and (max-width: 800px) {
+    .favGrid{
+        width: auto;
+        margin-inline: auto;
+    }
+}

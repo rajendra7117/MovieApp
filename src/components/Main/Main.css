@@ -1,0 +1,24 @@
+.main1{
+ height: 100vh;
+ margin-top: 9rem;
+}
+.main{
+    z-index: 3;
+    color: #fff;
+
+    margin: 5rem auto;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    height: vmax;
+}
+.login-btn{
+    border: 2px solid #fff;
+    background-color: #2d4263;
+    color: #fff;
+  
+    border-radius: .2rem;
+    padding: .6rem;
+    text-decoration: none;
+    font-size: 1.1rem;
+}

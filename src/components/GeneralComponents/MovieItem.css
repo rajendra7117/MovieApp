@@ -1,0 +1,19 @@
+.movie{
+    width: 300px;
+    translate: all 1s;
+    align-self: center;
+}
+.movie:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 900px){
+    .movie{
+        margin-inline: auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    .movie{
+        margin-inline: auto;
+    }
+}

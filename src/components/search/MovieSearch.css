@@ -1,0 +1,14 @@
+.moviesearch{
+  position: relative;
+  margin-top: 9rem;
+  width: 100%;
+}
+.search-icon{
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: .4rem;
+}
+.moviesearch input{
+    padding: 1rem 2rem;
+    width: 100%;
+}

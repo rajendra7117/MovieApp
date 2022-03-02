@@ -1,0 +1,11 @@
+.watchlist{
+    height: 100vh;
+    width: auto;
+    margin-top: 9rem;
+    padding: 1rem;
+}
+
+.watchlist h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+}

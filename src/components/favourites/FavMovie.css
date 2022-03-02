@@ -1,0 +1,44 @@
+.favmovie {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 7rem;
+  background-color: #fff;
+  border: #fff;
+  border-radius: 0.3rem;
+
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 0.75);
+}
+
+.favImg img {
+  border-radius: 0.4rem;
+}
+.fav-details {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+h5,
+.rating {
+  align-self: flex-start;
+}
+.fav-icon {
+  align-self: flex-end;
+}
+svg {
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width: 670px) {
+  .favmovie {
+    width: 98%;
+    margin: 2rem auto;
+    height: 9rem;
+    margin-bottom: 3rem;
+  }
+}
