@@ -1,12 +1,13 @@
 .favGrid{
-    margin: 2rem auto;
+    margin: 0 auto;
     width: 40rem;
-    height: vmax;
+    height: auto;
 }
 
 @media screen and (max-width: 800px) {
     .favGrid{
         width: auto;
-        margin-inline: auto;
+       
+        
     }
 }

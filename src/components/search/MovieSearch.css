@@ -1,6 +1,7 @@
 .moviesearch{
   position: relative;
   margin-top: 9rem;
+  background-color: #141E27;
   width: 100%;
 }
 .search-icon{
@@ -11,4 +12,10 @@
 .moviesearch input{
     padding: 1rem 2rem;
     width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .moviesearch{
+    margin-top: 3rem;
+  }
 }

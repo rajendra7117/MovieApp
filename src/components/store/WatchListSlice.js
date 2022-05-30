@@ -26,6 +26,11 @@ const WatchListSlice = createSlice({
       state.watchList = state.watchList.filter((movie) => movie.id !== id);
       localStorage.setItem("watchList", JSON.stringify(state.watchList));
     },
+
+    removeUserData(state, action){
+      state.watchList=[]
+      localStorage.setItem('watchList', JSON.stringify(state.watchList))
+  }
   },
 });
 

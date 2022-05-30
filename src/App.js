@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import { Route, Switch, useLocation } from "react-router-dom";
 import Popular from "./components/popular/Popular";
@@ -13,13 +14,23 @@ import Login from "./components/auth/login/Login";
 import Main from "./components/Main/Main";
 import { AnimatePresence } from "framer-motion";
 import NotFound from "./components/NotFound/NotFound";
-import {useSelector} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
+import { authSliceActions } from "./components/store/AuthSlice";
+import SignInSuccess from "./components/auth/sign/SignInSuccess";
 
 
 function App() {
   const location = useLocation();
-  const authStatus = useSelector((state) => state.authStatus.isLogged)
- 
+  const dispatch = useDispatch()
+  const authStatus = useSelector((state) => state.authStatus.isLogged);
+  useEffect(() => {
+    if(authStatus){
+      setTimeout(()=> {
+        dispatch(authSliceActions.loggedOut())
+      }, 3600000)
+    }
+  },[authStatus])
+
   return (
     <div className="App">
       <Header />
@@ -28,52 +39,37 @@ function App() {
           <Route path="/" exact>
             <Main />
           </Route>
-          
+
           <Route path="/latest" exact>
-            {authStatus ? (<Latest />) : (<Main />)}
-            
+            {authStatus ? <Latest /> : <Main />}
           </Route>
 
           <Route path="/popular" exact>
-          
-            {authStatus ? (<Popular />) : (<Main />)}
+            {authStatus ? <Popular /> : <Main />}
           </Route>
           <Route path="/info/:id">
-            
-            {authStatus ? (<MovieInfo />) : (<Main />)}
+            {authStatus ? <MovieInfo /> : <Main />}
           </Route>
           <Route path="/rated" exact>
-            
-            {authStatus ? (<TopRated />) : (<Main />)}
+            {authStatus ? <TopRated /> : <Main />}
           </Route>
           <Route path="/movieSearch">
-            
-            {authStatus ? (<MovieSearch />) : (<Main />)}
-
+            {authStatus ? <MovieSearch /> : <Main />}
           </Route>
           <Route path="/watchlist" exact>
-            
-            {authStatus ? (<WatchList />) : (<Main />)}
+            {authStatus ? <WatchList /> : <Main />}
           </Route>
-          <Route path="/fav">
-            
-            {authStatus ? (<Favourites />) : (<Main />)}
+          <Route path="/fav">{authStatus ? <Favourites /> : <Main />}</Route>
+          <Route path="/signin">{!authStatus ? <SignIn /> : <Latest />}</Route>
+          <Route path="/signinsuccess">
+            {!authStatus && <SignInSuccess />}
           </Route>
-          <Route path="/signin">
-            {!authStatus ? (<SignIn />) : (<Latest/>)}
-            
-          </Route>
-          <Route path="/login">
-            
-            {!authStatus ? (<Login />) : (<Latest/>)}
-          </Route>
+          <Route path="/login">{!authStatus ? <Login /> : <Latest />}</Route>
           <Route path="*">
             <NotFound />
           </Route>
-
         </Switch>
       </AnimatePresence>
-      
     </div>
   );
 }

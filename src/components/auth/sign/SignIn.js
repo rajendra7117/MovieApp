@@ -71,7 +71,7 @@ const {sendRequest, authState} = useHttp(signInRequest)
         progress: undefined,
         });
       setTimeout(() => {
-        history.push('/login')
+        history.push('/signinsuccess')
         setLoadSpinner(false)
         setErrorState(false)
       }, 3000)

@@ -18,7 +18,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .form input{
-    width: 20rem;
+    width: auto;
     border-radius: .2rem;
     padding: .5rem;
     font-size: 1.1rem;
@@ -47,13 +47,17 @@
 
 
 @media screen and (max-width: 700px) {
+    .form-div{
+        padding: 0;
+    }
     .form{
-        width: vmax;
+        width: 100vw;
         margin: 2rem auto;
+        padding: 0;
         
     }
     .form{
-        width: 21rem;
+        width: 90%;
         padding: .5rem;
         margin: 1rem auto;
        

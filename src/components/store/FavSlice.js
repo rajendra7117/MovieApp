@@ -22,7 +22,12 @@ const favSlice = createSlice({
             state.favMovies = state.favMovies.filter(movie => movie.id!==id)
             localStorage.setItem('fav', JSON.stringify(state.favMovies))
 
+        },
+        removeUserData(state, action){
+            state.favMovies=[]
+            localStorage.setItem('fav', JSON.stringify(state.favMovies))
         }
+
     }
 })
 

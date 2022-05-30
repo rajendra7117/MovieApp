@@ -32,6 +32,7 @@
         flex-direction: column;
         justify-content: space-between;
         height: 400px;
+        width: 50vw;
     }
     .wimage{
         width: 120px;

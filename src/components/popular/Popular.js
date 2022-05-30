@@ -3,32 +3,32 @@ import MoviesGrid from "../GeneralComponents/MoviesGrid";
 import { Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./Popular.css";
+import { pageSliceActions } from "../store/PageSlice";
+import { useSelector, useDispatch } from "react-redux";
 export default function Popular() {
   const [movies, setMovies] = useState([]);
-  const [page, setPage] = useState(1);
 
+  const pageNumber = useSelector((state) => state.pageNumber.popularPage);
+  const dispatch = useDispatch();
+  
   // const apiKey = "5b43d1ebe66750ccefbad667bde21805";
   const baseapi =
     "https://api.themoviedb.org/3/movie/popular?api_key=5b43d1ebe66750ccefbad667bde21805&language=en-US";
 
   useEffect(() => {
-    fetch(`${baseapi}&page=${page}`)
+    fetch(`${baseapi}&page=${pageNumber}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         setMovies(data.results);
       });
-  }, [page]);
+  }, [pageNumber]);
   const nextPageHandler = (e) => {
-    setPage((page) => {
-      return (page += 1);
-    });
+    dispatch(pageSliceActions.changePopularPage("next"));
   };
   const prevPageHandler = (e) => {
-    setPage((page) => {
-      return (page -= 1);
-    });
+    dispatch(pageSliceActions.changePopularPage("prev"));
   };
 
   return (
@@ -41,7 +41,7 @@ export default function Popular() {
     >
       <MoviesGrid movies={movies} />
       <div className="buttons">
-        {page !== 1 && (
+        {pageNumber !== 1 && (
           <Button variant="primary" onClick={prevPageHandler}>
             Prev
           </Button>

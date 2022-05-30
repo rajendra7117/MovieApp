@@ -5,7 +5,7 @@ const authSlice = createSlice({
     initialState: {isLogged: localStorage.getItem('loginStatus') ? JSON.parse(localStorage.getItem('loginStatus') ): false},
     reducers:{
         loggedIn(state, action){
-            console.log('exc')
+            
             if(localStorage.getItem('loginStatus')){
                 state.isLogged=JSON.parse(localStorage.getItem('loginStatus'))
             }
