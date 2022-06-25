@@ -36,8 +36,10 @@
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
    
-        justify-content: center;
-        align-items: center;
+       
+      
+        margin-top: 5rem;
+        padding: 0;
 
     }
     .grid.card{

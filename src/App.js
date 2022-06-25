@@ -23,13 +23,7 @@ function App() {
   const location = useLocation();
   const dispatch = useDispatch()
   const authStatus = useSelector((state) => state.authStatus.isLogged);
-  useEffect(() => {
-    if(authStatus){
-      setTimeout(()=> {
-        dispatch(authSliceActions.loggedOut())
-      }, 3600000)
-    }
-  },[authStatus])
+ 
 
   return (
     <div className="App">
